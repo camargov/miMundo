@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+* {
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+html {
+    background-color: #004E64;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 24pt;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#container {
+    background-color: #004E64;
+    color: white;
+    margin-top: 100px;
+    display: flex;
+}
+/* ************************************************************************************************ */
+/* Styling the banner at the top of the page */
+
+#title_banner {
+    background-color: #9FFFCB;
+    padding: 50px;
+    display: flex;
+    text-align: center;
+    height: 155px;
+}
+
+#title_banner img {
+    width: 150px;
+}
+
+#title_banner h1 {
+    color: #133C55;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 35pt;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+}
+/* ************************************************************************************************ */
+/* Styling the introduction */
+
+#instructions {
+    background-color: #25A18E;
+    color: #023047;
+    text-align: center;
+    font-size: 14pt;
+    padding: 50px;
+}
+
+#instructions h4 {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo_image:hover {
+    content: url("images/airplane.png");
+}
+/* ************************************************************************************************ */
+/* Styling the left section */
+
+#left_container {
+    padding: 50px;
+    width: 20%;
+}
+
+#left_container h3 {
+    color: #9FFFCB;
+}
+
+#customize {
+    margin-top: 80px;
+}
+
+#flag_container img {
+    width: 15%;
+    padding: 2px;
+    opacity: 0;
+}
+
+#not_visited_option {
+    margin-top: 20px;
+}
+
+#outline_options {
+    margin-top: 30px;
+}
+
+.outline_option {
+    margin-top: 10px;
+}
+
+#visited_color, #not_visited_color, #outline_color {
+    background-color: #004E64;
+    border: none;
+}
+
+#visited_color:hover, #not_visited_color:hover, #outline_color:hover {
+    background-color: #9FFFCB;
+}
+/* ************************************************************************************************ */
+/* Styling the map */
+
+#map {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 70px;
+    width: 315px;
+}
+/* ************************************************************************************************ */
+/* Styling the goals and stats section */
+
+#goals_and_stats {
+    padding: 50px;
+    width: 20%;
+}
+
+#right_column {
+    margin-left: 20px;
+}
+
+#visit_countries_sentence {
+    display: inline-flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 12pt;
+}
+
+#visit_countries_sentence input {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#country_checklist {
+    margin-top: 50px;
+}
+
+#country_checkboxes {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#updated_message_num, #updated_message_type {
+    margin-top: 0px;
+    color: #7AE582;
+}
+
+#visit_number_goal {
+    border-radius: 40%;
+    text-align: center;
+    font-size: 12pt;
+}
+
+#visit_number_goal:hover {
+    background-color: #9FFFCB;
+}
+
+
+
+
+
+

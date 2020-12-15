@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mi mundo</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://d3js.org/d3.v6.js"></script>
+    </head>
+
+    <body>
+        <!-- Banner at the top of the page-->
+        <div id="title_banner">
+            <img id="logo_image" src="images/world.png" alt="World Avatar">
+            <h1>Mi mundo</h1>
+        </div>
+
+        <!-- Instructions for the application -->
+        <div id="instructions">
+            <h2>Get Started</h2>
+            <h4>
+                Hey there!<br>Select a country in South America you've visited to track where you've been. As you visit more countries more flags will appear and you can see in real time how much you've completed your goals! Don't forget to customize the map to your liking!
+            </h4>
+        </div>
+
+        <div id="container">
+            <div id="left_container">
+                <!-- Flag container -->
+                <div id="flag_container">
+                    <h3>These are the flags of the<br>countries you've been to:</h3>
+                    <div>
+                        <img src="images/flags/Argentina.png" id="flag_Argentina">
+                        <img src="images/flags/Bolivia.png" id="flag_Bolivia"> 
+                        <img src="images/flags/Brazil.png" id="flag_Brazil">
+                        <img src="images/flags/Chile.png" id="flag_Chile">
+                        <img src="images/flags/Colombia.png" id="flag_Colombia">
+                    </div>
+                    <div>
+                        <img src="images/flags/Ecuador.png" id="flag_Ecuador">
+                        <img src="images/flags/Falkland_1.png" id="flag_Falkland_1">
+                        <img src="images/flags/French_Guiana.png" id="flag_French_Guiana">
+                        <img src="images/flags/Guyana.png" id="flag_Guyana">
+                        <img src="images/flags/Paraguay.png" id="flag_Paraguay">
+                    </div>
+                    <div>
+                        <img src="images/flags/Peru.png" id="flag_Peru"> 
+                        <img src="images/flags/Suriname.png" id="flag_Suriname">
+                        <img src="images/flags/Uruguay.png" id="flag_Uruguay">
+                        <img src="images/flags/Venezuela.png" id="flag_Venezuela">
+                    </div>
+                </div>
+                <!-- Customization section -->
+                <div id="customize">
+                    <h2>Customize</h2>
+                    <!-- Selecting map colors -->
+                    <div id="map_colors">
+                        <h3>Map Fill Colors</h3>
+                        <div id="color_options">
+                            <div>
+                                <input type="color" id="visited_color" value="#7AE582">
+                                <label for="visited_color">Visited</label>
+                            </div>
+                            <div  id="not_visited_option">
+                                <input type="color" id="not_visited_color" value="#00A5CF">
+                                <label for="not_visited_color">Not Visited</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Selecting user avatar -->
+                    <div id="outline_options">
+                        <h3>Map Outline Color</h3>
+                        <div>
+                            <input type="radio" id="none_outline_option" name="outline_setting" checked="true">
+                            <label for="none">None</label>
+                        </div>
+                        <div class="outline_option">
+                            <input type="radio" id="outline_color_option" name="outline_setting">
+                            <label for="outline_color_option">Color:</label>
+                            <input type="color" id="outline_color" value="#FFFFFF">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            <div id="map">
+                <!-- Drawing of the South America map -->
+                <svg width="500" height="540">
+                    <path class="map_country" id="Peru" d="M26.57,134.58c-3.27,4.1-3.29,10-1.65,15s4.71,9.34,7.28,13.91c10,17.81,12.69,39.17,23.6,56.46,7.74,12.28,19.16,21.71,30.37,30.93,2.71,2.22,6.21,4.58,9.44,3.22,1.94-.81,3.11-2.75,4.16-4.57,5.39-9.37,10.87-19,12.86-29.59s-.1-22.65-8-30c-5.6-5.2-13.43-7.53-18.86-12.9a23,23,0,0,1-6.37-20.15c.85-4.66,3.52-9.32,7.93-11,2.2-.87,4.69-1,6.77-2.08,2.74-1.48,4.29-4.47,5.36-7.39,1.89-5.17,2.48-11.71-1.52-15.47-3.68-3.46-9.47-3-14.19-4.73-5.2-1.94-8.11-4.8-12.15-8.6-1.79-1.68-5.51-3.4-7.91-2.87-3.38.76-3.63,3.32-4.94,6.53C53.88,123,38.33,127.44,33.88,139.38c-1.77.11-6.22-3.4-7.31-4.8" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Ecuador" d="M27.75,134.2c.41.35,1.72,1.86,2.16,2.17.85.62,3.06,2,4,1.45s2-4.81,2.77-5.49c4.17-3.56,5.5-4.49,8.28-7.24s6.29-4.71,9.15-7.5,5.12-6.41,5.47-10.4-1.56-8.3-5.17-10a24.59,24.59,0,0,0-4.15-1.27,25.12,25.12,0,0,1-11.81-7.23C37.75,88,37,87.14,36,87.2a3.06,3.06,0,0,0-2,1.45,115.27,115.27,0,0,0-9.11,13.61c-1.83,3.22-3.56,6.93-2.58,10.5.71,2.62,2.75,4.64,4.15,7a15.79,15.79,0,0,1,1.24,13.42" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Colombia" d="M94.29,117c1.88,1.18,3.35,2.13,5.2.9,2.67-1.77.57-3.4,0-6.55-1-5.73-1-7.88-.16-13.64a16.83,16.83,0,0,1,2.12-6.7,7.25,7.25,0,0,1,5.76-3.6c2.35,0,4.87,1.42,6.93.27,1.76-1,2.13-3.31,2.31-5.32l1.57-18c.2-2.25.37-4.64-.6-6.68-1.75-3.67-6.31-4.77-10.25-5.77-6.75-1.72-13.37-4.4-18.76-8.81S79,32.3,78.24,25.38,80.56,11,86.5,7.37A55.08,55.08,0,0,0,58.18,25.3,47,47,0,0,0,47.42,56.82c.24,5.14,1.36,10.45-.35,15.29-2.15,6.1-6.26,10-8.62,15.74" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Venezuela" d="M83.89,13.36c-5.26,3.74-5.54,11.17-3.58,17.31s6,9.93,11.09,13.88,15.32,7.23,21.68,8.29c7.45,1.23,5.87,13.21,5.09,20.7-.42,4.11-1.09,8.46-.86,12.58s.87,8.33,4.69,9.89c3.53,1.44,7.51-.1,11-1.65,3.69-1.64,7.89-4,8.19-8.07.23-3.29-2.3-6-4.32-8.61s-3.66-6.36-1.72-9c1.54-2.11,4.74-2.36,7.11-1.27s4.11,3.16,5.76,5.18c3.57-.29,7.23-.61,10.45-2.18s5.92-4.71,5.91-8.28c0-5.49-6.13-10-5-15.37.73-3.54,4.39-5.79,5.57-9.21,1.1-3.21-.23-6.78-2.15-9.59a24.15,24.15,0,0,0-18.15-10.26c-9.77-.59-19.74,4.82-29,1.78-4.4-1.44-8-4.62-12.37-6.24-5.11-1.9-14.61-2.56-19.34.14" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Guyana" d="M165.34,63.67c-.62-3.4-1.93-8.25-3.91-11.07s-2.67-5.13-.58-7.87c2.91-3.83,4.15-6.24,6.34-7.59,4-2.43,6.94,3.25,10,6.77,2.57,3,6.49,6.24,6.88,10.16.67,6.75-6.26,13.17-4.06,19.59.79,2.32,3,3.84,4.48,5.79a8.55,8.55,0,0,1,1,7.16c-.91,3.56-5.21,4.84-8.82,5.52-1.65.31-3.45.59-4.93-.19-2.66-1.41-5.05-6-4.69-9,.56-4.61,1.86-8.67,2.42-13.27.23-1.84-.5-1.76-1.47-3.33" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Suriname" d="M185.1,56.19c-1.28,3-2,6.27-3.29,9.3-1.48,3.41-2,4.58-.88,7.53,1.77,4.73,8.56,10.48,8.72,15a7.4,7.4,0,0,1,6.08-4.33c2.65-.18,5.66,1.06,7.78-.59a5.42,5.42,0,0,0,1.63-4.91A39.86,39.86,0,0,0,203.8,73a18,18,0,0,1,1.44-12.46c.65-1.28,1.43-3,.42-4a3,3,0,0,0-2.29-.56c-5.64.22-12.63,0-18.27.23" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="French_Guiana" d="M205.62,83c1.74-6.1,0-10.34-1.05-16.6-.13-.78.65-3.92,1.26-4.44.81-.69,1-1.78,1.62-2.28a2.92,2.92,0,0,1,2.88-.25,8.45,8.45,0,0,1,2.45,1.75c3.19,2.89,5.29,3.18,8.48,6.08a5.09,5.09,0,0,1,1.12,1.92c.18,1-1,3.11-1.86,3.65-3.11,2-4.59,5.54-5.85,9A6.1,6.1,0,0,1,213.58,84a3.48,3.48,0,0,1-2.45,1c-.91,0-4.62-1.85-5.51-2" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Bolivia" d="M114.67,283.3c.53,1.55,1.15,3.23,2.55,4.08s3.16.61,4.77.35l20.79-3.32a7,7,0,0,0,3.9-1.47c1.72-1.67,1.29-4.46,1.14-6.86A17.36,17.36,0,0,1,152,263.27a13.09,13.09,0,0,1,12.58-4,25.77,25.77,0,0,0,9.78,1.06c2.74-.31,5-.63,6.14-3.15,2.38-5.33.22-11.63-3-16.47s-7.61-8.95-10.24-14.16c-2.14-4.25-3.1-9.12-5.92-12.95-3.71-5-9-5.16-14.75-7.63s-12.64-8-15-13.75c-1.53-3.79-1.69-8.85-5.39-10.61-3.39-1.61-7.23.87-10.16,3.22-4.27,3.42-9.2,1.66-6.91,6.62,2.6,5.63,6.19,16.11,5.58,21.13-1.41,11.6-2.84,21.94-11.31,31.7" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Paraguay" d="M149.13,282c-.93-5.39-.26-12.12,3.56-16s5.11-5.23,10.57-5.44c3.15-.12,6.87,1.22,9.73,1.4s6.51,1.08,7.59,3.74c2.18,5.35-2.46,6.78,1.07,11.36,2.58,3.36,8.38,2.46,11.12,5.69,2.44,2.87,1.48,7.93,4.57,10.08,1,.69,2.25.93,3.25,1.62,2.68,1.84,2.39,5.81,1.8,9-1.32,7.14-3.21,15.14-9.46,18.83-5.89,3.49-11.6.92-18.19-.92,3.83-3.63,6.25-7.56,4.9-12.66-.77-2.92-3.25-5.1-5.95-6.45s-5.66-2.06-8.46-3.16c-7.78-3-11.42-6.29-14.75-13.95" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Brazil" d="M107.16,186.76c-8.64-2.1-11-3-17.69-8.91s-11.08-17.6-6.14-25,11.79-4.78,16.81-12,4.1-17.08,2.63-25.57S98,95.17,105.83,91.58c5.88-2.69,12.52,4.75,18.86,6s17.09-5.12,17.84-11.54c.44-3.81-4.3-7.36-6.26-10.65s-1.86-4.67.93-7.3c3.36-3.16,7.81,6.16,12.42,6.09,3.86,0,9.88-1.65,13-3.87,4.1-2.87,6.23-1.76,4.61,3.31-1.93,6-1.31,14.4-.23,19.81,11.72,3.85,16-5.87,24.43-6.48s24.69,1.9,25.38-7c.41-5.24,6.7-9.19,8-10.23,2.16,17.75,15.77,31.71,31,41.16S288.36,125.52,305,132c8.4,3.28,16.84,7.05,23.37,13.27s10.88,15.39,9.22,24.25c-2.81,15-20.35,22.52-26.79,36.33-4.17,8.94-3.16,19.29-4.06,29.1a73.85,73.85,0,0,1-28.15,51.11c-9.19,7.07-20.21,12.08-27.53,21.07-10.84,13.29-11.51,32.69-22.16,46.12-3.91,4.93-9.43,9-15.7,9.46-7.85.58-14.89-4.42-21.16-9.18-4.76-3.62-10-8.2-9.74-14.17.37-8.41,10-15.23,16.82-20.2,9.62-7,7.58-22.21,3.64-30.68-3.65-7.84-17.89-7.8-20-15-2.48-8.29,2.31-23-1.2-32.14-5.27-13.64-28.47-38.43-39.05-48.51-16.84-16-17.84-24.22-35.34-6.12" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Uruguay" d="M182,345.93c-2.1,13.06-8.76,19-4,31.6,1.5,4,10.38,8.67,14.59,8,2.82-.43,8-1.56,9.89-3.64,6.34-6.82,8.39-12,14.73-18.81-4.75,4.21-12.82-2.11-19.27-3.81-2.82-.75-5.9-5.37-8.35-7a26.86,26.86,0,0,1-5.46-4.53" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Argentina" d="M104.44,524.27c-6.17-1.23-12.44-2.49-18-5.37s-10.54-7.66-12.13-13.76c-1.25-4.76-.36-9.8.53-14.64q15.56-84.66,31.12-169.32c2.45-13.32,4.88-30.14,15.61-30.87,15.11-1,21.35-7.3,29.64.61,9,8.58,11,11.89,22.7,15.12,5.11,1.42-10.29,27.75,8.49,18.85,2.23-1.06,6.72-.51,5.42,1.6-2.16,3.47-5.22,3.74-5.7,7.65-2,16-11.77,31-6.22,44.73,3.09,7.6,13.06,13.43,10.51,21.23-1.66,5.09-7.56,12-12.14,14.81-11.63,7-21.59,12.78-34.87,15.6-3.88.82-8.08,1.6-10.82,4.47-5.06,5.29-2.28,13.88.21,20.77s3.39,16.47-3.17,19.74c-2.24,1.11-5,1.2-6.88,2.89-4,3.69-.07,10.25-.31,15.71-.25,5.69-5.18,9.85-9.13,14s-8,11.47-4.83,16.22" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <path id="Chile" d="M94.15,299c3.46-12.68,2.2-25.4,2-38.55-.06-4.13.28-4.63,3.21-7.54,3.08-3.07,3.87-4.35,5.25-.44,9.35,26.47,6.53,41.13.34,67.27C94.28,364.82,84.8,424.28,76.61,469.86c-1.81,10.08-6.79,29.42-3,38.91,3.6,8.87,18.2,17.74,27.94,16.45,9.49-1.26,7.21,12.26,5.29,21.64-18.23,1.8-36.88-11-42.66-28.35s-.93-37.15,1.58-55.29c7.55-54.56,18.47-110,28.34-164.2" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+
+                    <g>
+                        <path class="Falkland_Islands" id="Falkland_1" d="M109.35,530.34c9,4.41,14.35,9.75,24.16,11.79a157.25,157.25,0,0,1-24.93.35" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+                        
+                        <path class="Falkland_Islands" id="Falkland_2" d="M157.28,521.75c0,1.71-4.07,5.12-9.1,5.09-6.05,0-10.56-.82-9.11-2.47,1.13-1.28,4.08-5.45,9.11-5.45S157.28,520.05,157.28,521.75Z" transform="translate(-22.04 -7.37)" fill="#00A5CF"/>
+                    </g>
+                </svg>
+            </div>
+
+
+            <!-- Section for goals and stats -->
+            <div id="goals_and_stats">
+                <h2>Goals & Stats</h2>
+                <div id="goals_and_stats_container">
+                    <!-- The number of countries the user wants to visit-->
+                    <div id="number_wishlist">
+                        <div id="visit_countries_sentence">
+                            <p>I want to visit</p>
+                            <input type="number" id="visit_number_goal" min="0" max="14" value="14">
+                            <p>countries</p>
+                        </div>
+                        <!-- Completion bar -->
+                        <div class="completion_bar" id="number_goal_bar"></div>
+                        <p id="updated_message_num">I have visited 0 out of 14 countries</p>
+                    </div>
+                    <!-- The countries the user wants to visit -->
+                    <div id="country_checklist">
+                        <h3>I want to visit ...</h3>
+                        <div id="country_checkboxes">
+                            <!-- Left column -->
+                            <div class="column">
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Argentina">
+                                    <label>Argentina</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Bolivia">
+                                    <label>Bolivia</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Brazil">
+                                    <label>Brazil</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Chile">
+                                    <label>Chile</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Colombia">
+                                    <label>Colombia</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Ecuador">
+                                    <label>Ecuador</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Falkland_1">
+                                    <label>Falkland Islands</label>
+                                </div>
+                            </div>
+                            <!-- Right column -->
+                            <div class="column" id="right_column">
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_French_Guiana">
+                                    <label>French Guiana</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Guyana">
+                                    <label>Guyana</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Paraguay">
+                                    <label>Paraguay</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Peru">
+                                    <label>Peru</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Suriname">
+                                    <label>Suriname</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Uruguay">
+                                    <label>Uruguay</label>
+                                </div>
+                                <div class="country_checkbox">
+                                    <input type="checkbox" id="checkbox_Venezuela">
+                                    <label>Venezuela</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Completion bar -->
+                        <div class="completion_bar" id="country_type_goal_bar"></div>
+                        <p id="updated_message_type">I have visited 0 out of 0 countries on my list</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+        <!-- JavaScript link -->
+        <script src="script.js"></script>
+    </body>
+</html>
